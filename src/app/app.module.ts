@@ -8,6 +8,8 @@ import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FilterComponent } from './share/filter/filter.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { CreateComponent } from './product/create/create.component';
+import { ObcComponent } from './product/obc/obc.component';
+import { AbcComponent } from './product/abc/abc.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { CreateComponent } from './product/create/create.component';
     FilterComponent,
     EditProductComponent,
     CreateComponent,
+    ObcComponent,
+    AbcComponent,
   ],
   imports: [
     BrowserModule,
