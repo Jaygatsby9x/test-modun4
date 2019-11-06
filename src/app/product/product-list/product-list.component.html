@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" ></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Pricing</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container" [style.background]="background">
+  <table class="table">
+    <thead class="thead-dark">
+    <div>
+     <app-filter (changeKeyword)="setFilter($event)" (changeStatus)="setFilterStatus($event)"></app-filter>
+      <div>
+        <button type="button" class="btn btn-info" (click)="imgToggle()">Show</button>
+      </div>
+    </div>
+    <div><input [value]="background" type="color" (change)="onChange($event.target.value)"></div>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of productFilter ;let i=index">
+      <th scope="row">{{i +1}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.desc}}</td>
+      <td>{{product.status}}</td>
+      <td>{{product.price}}</td>
+      <td *ngIf="imageStatus"><img src="{{product.image}}"  width="100"></td>
+      <td><button type="button" class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+      <td><a [routerLink]="['/products/edit',i]" class="btn btn-warning">Edit</a>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
