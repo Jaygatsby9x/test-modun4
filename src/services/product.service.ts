@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {IProduct} from '../app/product/product';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  constructor() { }
+  constructor() {
+  }
+
   products: IProduct[] = [
     {
       id: 1,
@@ -30,15 +33,21 @@ export class ProductService {
       image: 'assets/image/boing.jpeg',
       status: '0'
     }
-];
-   getProduct() {
-     return this.products;
+  ];
+
+  getProduct() {
+    return this.products;
   }
+
   getById(id) {
-     return this.products[id];
+    return this.products[id];
   }
 
   update(id, data: IProduct) {
-     this.products[id] = data;
+    this.products[id] = data;
+  }
+
+  create(value) {
+     this.products.push(value);
   }
 }
