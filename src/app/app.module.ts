@@ -7,6 +7,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FilterComponent } from './share/filter/filter.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { CreateComponent } from './product/create/create.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { EditProductComponent } from './product/edit-product/edit-product.compon
     ProductListComponent,
     FilterComponent,
     EditProductComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
